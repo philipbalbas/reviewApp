@@ -1,5 +1,4 @@
 open ReactNavigation;
-open ReactNative;
 
 module LectureNavigator = {
   let navigator =
@@ -7,7 +6,17 @@ module LectureNavigator = {
       "Modules": Modules.make,
       "Subjects": Subjects.make,
       "Topics": Topics.make,
-      "Notes": Notes.make
+      "Notes": Notes.make,
+    });
+};
+
+module BottomNavigator = {
+  let navigator =
+    TabNavigator.Bottom.make({
+      "Home": Home.make,
+      "Lecture": LectureNavigator.navigator,
+      "Quiz": Quiz.make,
+      "Exam": Exam.make,
     });
 };
 
@@ -16,24 +25,10 @@ module MainNavigator =
     type screenProps = unit;
     let navigator =
       DrawerNavigator.make({
-        "Lecture": LectureNavigator.navigator,
-        "MealDetail": Subjects.make,
+        "LectureQuiz": BottomNavigator.navigator,
+        "Profile": Profile.make,
       });
   });
-
-let styles =
-  Style.(
-    StyleSheet.create({
-      "container":
-        style(
-          ~flex=1.,
-          ~justifyContent=`center,
-          ~alignItems=`center,
-          ~backgroundColor="#fff",
-          (),
-        ),
-    })
-  );
 
 [@react.component]
 let make = () => <MainNavigator />;
