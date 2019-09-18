@@ -19,10 +19,10 @@ let styles =
 [@react.component]
 let make = (~navigation) => {
   <View style=styles##container>
-    <Text> "Module Screen"->React.string </Text>
+    <Text> "Topic Screen"->React.string </Text>
     <Button
-      title="Go to Subjects"
-      onPress={_ => navigation->Navigation.navigate("Subjects")}
+      title="Go to Note"
+      onPress={_ => navigation->Navigation.navigate("Notes")}
     />
   </View>;
 };
@@ -30,7 +30,7 @@ let make = (~navigation) => {
 make->NavigationOptions.(
         setNavigationOptions(
           t(
-            ~title="Modules",
+            ~title="Topics",
             // TODO: Center header title
             // ~headerTitleStyle=Style.(style(~alignSelf=`center, ~flex=1., ())),
             (),

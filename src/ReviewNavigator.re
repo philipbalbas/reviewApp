@@ -3,7 +3,12 @@ open ReactNative;
 
 module LectureNavigator = {
   let navigator =
-    StackNavigator.make({"Modules": Modules.make, "Lecture": Lecture.make});
+    StackNavigator.make({
+      "Modules": Modules.make,
+      "Subjects": Subjects.make,
+      "Topics": Topics.make,
+      "Notes": Notes.make
+    });
 };
 
 module MainNavigator =
@@ -12,7 +17,7 @@ module MainNavigator =
     let navigator =
       DrawerNavigator.make({
         "Lecture": LectureNavigator.navigator,
-        "MealDetail": Lecture.make,
+        "MealDetail": Subjects.make,
       });
   });
 

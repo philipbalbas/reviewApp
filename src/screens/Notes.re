@@ -1,4 +1,5 @@
 open ReactNative;
+open ReactNavigation;
 
 let styles =
   Style.(
@@ -8,7 +9,7 @@ let styles =
           ~flex=1.,
           ~justifyContent=`center,
           ~alignItems=`center,
-          ~backgroundColor="#F5FCFF",
+          ~backgroundColor="#fff",
           (),
         ),
       "instructions": style(~textAlign=`center, ~color="#ffffff", ()),
@@ -18,6 +19,17 @@ let styles =
 [@react.component]
 let make = () => {
   <View style=styles##container>
-    <Text> "Lecture Screen"->React.string </Text>
+    <Text> "Note Screen"->React.string </Text>
   </View>;
 };
+
+make->NavigationOptions.(
+        setNavigationOptions(
+          t(
+            ~title="Notes",
+            // TODO: Center header title
+            // ~headerTitleStyle=Style.(style(~alignSelf=`center, ~flex=1., ())),
+            (),
+          ),
+        )
+      );
