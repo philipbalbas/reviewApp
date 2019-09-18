@@ -1,0 +1,9 @@
+  <LinearGradient
+      colors=[|"#DD4B39", "#C62C19"|]
+      start=[|0.0, 0.0|]
+      _end=[|1.0, 1.0|]
+      style=Style.(style(~padding=dp(12.), ~borderRadius=12., ()))>
+      <Text style=styles##instructions>
+        {React.string("To get started, edit App.re")}
+      </Text>
+    </LinearGradient>
