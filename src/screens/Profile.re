@@ -19,8 +19,8 @@ let styles =
 [@react.component]
 let make = () => {
   <View style=styles##container>
-    <Text> "Home Screen"->React.string </Text>
+    <Text> "Profile Screen"->React.string </Text>
   </View>;
 };
 
-make->NavigationOptions.(setNavigationOptions(t(~title="Home", ())));
+make->NavigationOptions.(setNavigationOptions(t(~title="Profile", ())));

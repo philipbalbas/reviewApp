@@ -1,5 +1,6 @@
 open ReactNative;
 open ReactNavigation;
+open Helpers;
 
 let styles =
   Style.(
@@ -28,12 +29,9 @@ let make = (~navigation) => {
 };
 
 make->NavigationOptions.(
-        setNavigationOptions(
-          t(
-            ~title="Modules",
-            // TODO: Center header title
-            // ~headerTitleStyle=Style.(style(~alignSelf=`center, ~flex=1., ())),
-            (),
-          ),
+        setDynamicNavigationOptions(navData =>
+          t(~title="Modules", ~headerLeft=Helpers.avatarIcon(navData), ())
         )
       );
+
+NavigationOptions.setDynamicNavigationOptions;
