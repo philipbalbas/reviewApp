@@ -30,7 +30,7 @@ let make = (~navigation) => {
 make->NavigationOptions.(
         setNavigationOptions(
           t(
-            ~title="Subjectss",
+            ~title="Subjects",
             // TODO: Center header title
             // ~headerTitleStyle=Style.(style(~alignSelf=`center, ~flex=1., ())),
             (),

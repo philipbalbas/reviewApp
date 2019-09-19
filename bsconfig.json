@@ -8,8 +8,10 @@
     "reason-react",
     "reason-react-native",
     "reason-expo",
-    "reason-react-navigation"
+    "reason-react-navigation",
+    "reason-urql"
   ],
+  "ppx-flags": ["graphql_ppx/ppx"],
   "sources": [
     {
       "dir": "src",
