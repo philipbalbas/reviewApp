@@ -1,5 +1,6 @@
 open ReactNative;
 open ReactNavigation;
+open Expo;
 
 let styles =
   Style.(
@@ -20,6 +21,14 @@ let styles =
 let make = () => {
   <View style=styles##container>
     <Text> "Home Screen"->React.string </Text>
+    <View style=Style.(style(~marginTop=11.->dp, ())) />
+    <WebView
+      source={WebView.Source.uri(
+        ~uri="https://facebook.github.io/react-native/",
+        (),
+      )}
+    />
+    <Text style=Style.(style(~color="red", ()))> "What"->React.string </Text>
   </View>;
 };
 
